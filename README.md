@@ -1,0 +1,3 @@
+Attribution:<br>✩ CodeIgniter 4; CodeIgniter Foundation; https://codeigniter.com; MIT License<br>✩ Colorlib; Colorlib; https://github.com/colorlibhq/; MIT License<br>✩ Fontawesome; https://fontawesome.com/; https://fontawesome.com/support; CC 4.0<br>✩ jQuerry; John Resig; https://jquery.com; CC0<br>✩ Clean Blog by Bootstrap; Matt Harzewski; http://jekyllthemes.org/themes/clean-blog/; GPL 3.0
+
+<blockquote>Simple vs Easy<br>What is simple is usually easy, what is easy is often not simple.  Simplicity and ease should not be confused.  Simplicity should be the target which shall increase functional efficiency, but shall not bolster ease to the detriment simplicity.  Excessive complexity limits design potentials.</blockquote>
