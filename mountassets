@@ -1,0 +1,1 @@
+sudo mount -r --bind /home/web/williamsonsoftware.com/ignitionbase/web/writeCODEUSET/uploadCODEUSET /home/web/williamsonsoftware.com/ignitionbase/web/public/assets

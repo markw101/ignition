@@ -1,0 +1,103 @@
+#--------------------------------------------------------------------
+# Example Environment Configuration file
+#
+# This file can be used as a starting point for your own
+# custom .env files, and contains most of the possible settings
+# available in a default install.
+#
+# By default, all of the settings are commented out. If you want
+# to override the setting, you must un-comment it by removing the '#'
+# at the beginning of the line.
+#--------------------------------------------------------------------
+
+#--------------------------------------------------------------------
+# ENVIRONMENT
+#--------------------------------------------------------------------
+
+# CI_ENVIRONMENT = production
+
+CI_ENVIRONMENT = development
+
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+
+# app.baseURL = ''
+# app.forceGlobalSecureRequests = false
+
+app.baseURL = 'http://williamsonsoftware.com'
+app.indexPage = ''
+app.appTimezone = 'America/Los_Angeles'
+app.defaultLocale = 'en'
+
+
+app.sessionDriver = 'CodeIgniter\Session\Handlers\DatabaseHandler'
+# app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
+app.sessionCookieName = 'ci_session' # if change this system generates many sessions in sessions dir
+app.sessionSavePath = sessionsG40813 # set this to new name for server to hide directory
+app.sessionSavePath = NULL
+app.sessionMatchIP = false
+app.sessionTimeToUpdate = 300
+app.sessionRegenerateDestroy = false
+
+app.cookiePrefix = ''
+app.cookieDomain = ''
+app.cookiePath = '/'
+app.cookieSecure = false
+app.cookieHTTPOnly = false
+
+app.CSRFProtection  = false
+app.CSRFTokenName   = 'csrf_test_name'
+app.CSRFCookieName  = 'csrf_cookie_name'
+app.CSRFExpire      = 7200
+app.CSRFRegenerate  = true
+app.CSRFExcludeURIs = []
+
+app.CSPEnabled = false
+
+# Williamson Software, Ignition main site
+database.ignitionbasic.hostname = 127.0.0.1
+database.ignitionbasic.database = ignitionbasic
+database.ignitionbasic.username = ignitionbasic
+database.ignitionbasic.password = secretcode123
+database.ignitionbasic.DBDriver = MySQLi
+database.ignitionbasic.socket = 127.0.0.1
+
+# Ignition, taz
+database.ignition_taz.hostname = 127.0.0.1
+database.ignition_taz.database = ignition_taz
+database.ignition_taz.username = ignitionbasic
+database.ignition_taz.password = secretcode123
+database.ignition_taz.DBDriver = MySQLi
+database.ignition_taz.socket = 127.0.0.1
+
+#--------------------------------------------------------------------
+# CONTENT SECURITY POLICY
+#--------------------------------------------------------------------
+
+# contentsecuritypolicy.reportOnly = false
+# contentsecuritypolicy.defaultSrc = 'none'
+# contentsecuritypolicy.scriptSrc = 'self'
+# contentsecuritypolicy.styleSrc = 'self'
+# contentsecuritypolicy.imageSrc = 'self'
+# contentsecuritypolicy.base_uri = null
+# contentsecuritypolicy.childSrc = null
+# contentsecuritypolicy.connectSrc = 'self'
+# contentsecuritypolicy.fontSrc = null
+# contentsecuritypolicy.formAction = null
+# contentsecuritypolicy.frameAncestors = null
+# contentsecuritypolicy.mediaSrc = null
+# contentsecuritypolicy.objectSrc = null
+# contentsecuritypolicy.pluginTypes = null
+# contentsecuritypolicy.reportURI = null
+# contentsecuritypolicy.sandbox = false
+# contentsecuritypolicy.upgradeInsecureRequests = false
+
+#--------------------------------------------------------------------
+# HONEYPOT
+#--------------------------------------------------------------------
+
+#  honeypot.hidden = 'true'
+#  honeypot.label = 'Fill This Field'
+#  honeypot.name = 'honeypot'
+#  honeypot.template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
