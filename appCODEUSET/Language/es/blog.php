@@ -1,0 +1,1 @@
+../../Ignition/Lang/es/blog.php
