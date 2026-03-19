@@ -6,12 +6,10 @@ Attribution:<br>✩ CodeIgniter 4; CodeIgniter Foundation; https://codeigniter.c
 <h2>Features List</h2>
 Ignition gives you the following:<br>✔ A built-in blogging system that includes the following: Categories; Popular Posts; Authors table; and a Tag Cloud<br>✔ Extensive multi language support<br>✔ Fastest path to a Codeigniter 4 website<br>✔ App security with numerous security hardening modifications<br>✔ An app control panel for Adminstrators and logged-in Users<br>✔ A flexible but not overly complex site theming system<br>✔ Built in Twitter typeahead bundle<br>✔ Ignition AutoForm system which allows one to create an entire MVC system (Model, View, Control), with database storage with ability to index and edit records with just one file in less than one hour.
 
-<center><font style="font-weight: 600">Instructions</font></center>
-
-<font style="font-weight: 600">Getting Started</font>
+<h3>Getting Started</h3><br>
 Download Ignition source code from Github by either cloning the repository or go to Download Zip file (usually a button with a download option).
 
-<font style="font-weight: 600">Ignition File Structure</font>
+<br><h3>Ignition File Structure</h3><br>
 One very important key to understanding Ignition is in knowing and understanding the layout of the file system. Knowing where your application files are located and how to access and modify them shall be the basis for much of your development work in Ignition.
 
 Ignition is built around a directory structure as follows:<table><tr><td colspan=3>web/</td></tr><tr><td style="width: 30px;"></td><td style="width: 200px; vertical-align: top">appCODEUSET</td><td style="width: 500px;">❮ Directory.  Main application directory</td></tr><tr><td></td><td style="vertical-align: top">ci4CODEUSET</td><td>❮ Directory.  Codeigniter application files</td></tr><tr><td style="width: 30px;"></td><td style="vertical-align: top">.env</td><td>❮ File.  Set environment variables, especially database names and passwords</td></tr><tr><td style="width: 30px;"></td><td style="vertical-align: top">mountassets</td><td>❮ File.  A shell script that mounts the web/public/assets dir, giving access to uploads</td></tr><tr><td style="width: 30px;"></td><td style="vertical-align: top">public</td><td>❮ Directory.  Public facing directory, designated as document root in Nginx/Apache config</td></tr><tr><td style="width: 30px;"></td><td style="vertical-align: top;">writeCODEUSET</td><td>❮ Directory.  A directory that contains writable directories for your application</td></tr></table>
