@@ -2,12 +2,15 @@
 <h4>Download and install Ignition and jump on the fast track to a fully functioning CodeIgniter 4 website. Build an entire website application with a menu system, Clean Blog home page banner, footer, blogging system and user management functions within just a few hours.</h4>
 Attribution:<br>✩ CodeIgniter 4; CodeIgniter Foundation; https://codeigniter.com; MIT License<br>✩ Colorlib; Colorlib; https://github.com/colorlibhq/; MIT License<br>✩ Fontawesome; https://fontawesome.com/; https://fontawesome.com/support; CC 4.0<br>✩ jQuerry; John Resig; https://jquery.com; CC0<br>✩ Clean Blog by Bootstrap; Matt Harzewski; http://jekyllthemes.org/themes/clean-blog/; GPL 3.0<br>✩ Twitter Typeahead.js; Jake Harding; https://github.com/twitter/typeahead.js/; MIT
 
+
 <blockquote>Simple vs Easy<br>What is simple is usually easy, what is easy is often not simple.  Simplicity and ease should not be confused.  Simplicity should be the target which shall increase functional efficiency, but shall not bolster ease to the detriment simplicity.  Excessive complexity limits design potentials.</blockquote>
 <h2>Features List</h2>
 Ignition gives you the following:<br>✔ A built-in blogging system that includes the following: Categories; Popular Posts; Authors table; and a Tag Cloud<br>✔ Extensive multi language support<br>✔ Fastest path to a Codeigniter 4 website<br>✔ App security with numerous security hardening modifications<br>✔ An app control panel for Administrators and logged-in Users<br>✔ A flexible but not overly complex site theming system<br>✔ Built in Twitter typeahead bundle<br>✔ Ignition AutoForm system which allows one to create an entire MVC system (Model, View, Control), with database storage with ability to index and edit records with just one file in less than one hour.<br>✔ User support with user table, user types, user profile record and login/logout capabilities
-<br>
+
+
 <b>Instructions</b>
 Download Ignition source code from Github by either cloning the repository or go to Download Zip file (usually a button with a download option). For a really quick-start, jump to Getting Started below.
+
 
 <b>Ignition File Structure</b>
 One very important key to knowing your way around Ignition is in learning the layout of the file system. Knowing where your application files are located and how to access and modify them shall be the basis for much of your development work in Ignition.
