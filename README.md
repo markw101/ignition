@@ -1,16 +1,16 @@
 <h2>Welcome to Ignition: the CodeIgniter 4 extension that will give you the fastest and most extensible headstart on your website and web application development projects!</h2>
 <h4>Download and install Ignition and jump on the fast track to a fully functioning CodeIgniter 4 website. Build an entire website application with a menu system, Clean Blog home page banner, footer, blogging system and user management functions within just a few hours.</h4>
-Attribution:<br>✩ CodeIgniter 4; CodeIgniter Foundation; https://codeigniter.com; MIT License<br>✩ Colorlib; Colorlib; https://github.com/colorlibhq/; MIT License<br>✩ Fontawesome; https://fontawesome.com/; https://fontawesome.com/support; CC 4.0<br>✩ jQuerry; John Resig; https://jquery.com; CC0<br>✩ Clean Blog by Bootstrap; Matt Harzewski; http://jekyllthemes.org/themes/clean-blog/; GPL 3.0<br>✩ Twitter Typeahead.js; Jake Harding; https://github.com/twitter/typeahead.js/; MIT
 
+For a sample website running a stock version of this open source software visit the example implementation here:<br><a href="http://en.ignitionbase.williamsonsoftware.com">en.ignitionbase.williamsonsoftware.com</a>
+
+Attribution:<br>✩ CodeIgniter 4; CodeIgniter Foundation; https://codeigniter.com; MIT License<br>✩ Colorlib; Colorlib; https://github.com/colorlibhq/; MIT License<br>✩ Fontawesome; https://fontawesome.com/; https://fontawesome.com/support; CC 4.0<br>✩ jQuerry; John Resig; https://jquery.com; CC0<br>✩ Clean Blog by Bootstrap; Matt Harzewski; http://jekyllthemes.org/themes/clean-blog/; GPL 3.0<br>✩ Twitter Typeahead.js; Jake Harding; https://github.com/twitter/typeahead.js/; MIT
 
 <blockquote>Simple vs Easy<br>What is simple is usually easy, what is easy is often not simple.  Simplicity and ease should not be confused.  Simplicity should be the target which shall increase functional efficiency, but shall not bolster ease to the detriment simplicity.  Excessive complexity limits design potentials.</blockquote>
 <h2>Features List</h2>
 Ignition gives you the following:<br>✔ A built-in blogging system that includes the following: Categories; Popular Posts; Authors table; and a Tag Cloud<br>✔ Extensive multi language support<br>✔ Fastest path to a Codeigniter 4 website<br>✔ App security with numerous security hardening modifications<br>✔ An app control panel for Administrators and logged-in Users<br>✔ A flexible but not overly complex site theming system<br>✔ Built in Twitter typeahead bundle<br>✔ Ignition AutoForm system which allows one to create an entire MVC system (Model, View, Control), with database storage with ability to index and edit records with just one file in less than one hour.<br>✔ User support with user table, user types, user profile record and login/logout capabilities
 
-
 <b>Instructions</b>
 Download Ignition source code from Github by either cloning the repository or go to Download Zip file (usually a button with a download option). For a really quick-start, jump to Getting Started below.
-
 
 <b>Ignition File Structure</b>
 One very important key to knowing your way around Ignition is in learning the layout of the file system. Knowing where your application files are located and how to access and modify them shall be the basis for much of your development work in Ignition.
@@ -43,7 +43,7 @@ Directory: writeCODEUSET
 This directory contains directories with write permissions required by the web server.  You must always carefully plan and set write permissions in directories on a public server, especially those in the program execution path (in this case PHP) which is set and limited in the web server.<br><table><tr><td style="width: 30px;"></td><td style="width: 200px; vertical-align: top">cache</td><td style="width: 500">❮ Codeigniter, web cache (if enabled)</td></tr><tr><td></td><td style="width: 200px; vertical-align: top">debugbar</td><td>❮ Codeigniter, used in debug mode</td></tr><tr><td></td><td style="width: 200px; vertical-align: top">logs</td><td>❮ Codeigniter logging, normally disabled</td></tr><tr><td></td><td style="width: 200px; vertical-align: top">session</td><td>❮ Codeigniter sessions if using file system session system (vs database)</td></tr><td></td><td style="width: 200px; vertical-align: top">uploadCODEUSET</td><td>❮ User content upload.  Set in index.php</td></tr></table>
 
 <b>GETTING STARTED:</b>
-System Requirements: You must be running a suitable web server such as a modern version of Nginx or Apache. You must have installed and working with your web server PHP 8.1 or above. The database you choose must be compatible with the PHP version that you are running (for example 11.6.2-MariaDB).
+System Requirements: You must be running a suitable web server such as a modern version of Nginx or Apache. You must have installed and working with your web server PHP 8.1 or above. The database you choose must be compatible with the PHP version that you are running (for example 11.6.2-MariaDB). Additionally, PHP requires several extensions in order to function with Ignition. For a Debian based install (including most Ubuntu distributions), see below section titled Install PHP for Ignition.
 1) Download the source code as zip or clone the Github repository
 2) Move the source code into your web sites, application directory. I like to use /home/web/newsitename.com/web
 3) Create two databases, set the passwords and read-in the databases located in the web/mysql directory.  See the file named web/.env for the database names and passwords.  They are named ignitionbase.sql and ignition_taz.sql.  There is a bash script in the web/mysql directory named setupdb which will create the two databases and populate them with the supplied data.  From the command line cd into the mysql directory and run the script ./setupdb
@@ -118,3 +118,34 @@ The two variables to set in SiteConfig are as follows:<br>  public $languages 
 
 <b>HREFLANG Link Support</b>
 If multi-language support is activated and AUTOLANG is set to TRUE, then the Ignition layout rendering engine will automatically generate SEO friendly hreflang meta data in the header. This tells the search engines how to locate the various languages for your site based on the locale for each language. This only works when the site is set to option 1, language selection based on locale specific URLs (i.e. AUTOLANG is set to TRUE).
+
+<b>Create a New Igntion Application</b>
+
+In order to create a new Igntion application, you must copy the entire application top level directory structure into a new application directory (see Ignition File Structure above). After you copy all files into a new directory you will need to modify several Codeigniter configuration files. These are located in the web/appCODEUSET/Config directory, as follows:
+Database.php	❮ Set new database name
+Session.php	❮ You may wish to modify your session type (file or database) and timeout length as well as site cookie name
+Routes.php	❮ If the Site/Routes/SiteRoutes.php is constrianing, add new routes
+
+Consult the Codeigniter documentation for more information. You must also set the database name, DBGROUP, and IGNITIONCD in index.php and the basic configuration in SiteConfig.php and SiteConstants.php. See Configure Ignition and Theme Setup in Ignition above.
+
+<b>Install PHP for Ignition</b>
+
+If you are running the wrong version of PHP you may switch between versions using the following instructions to change your distribution to run PHP 8.3, for example:
+
+# Modify debian 13 to use php 8.3
+apt-get install -y apt-transport-https lsb-release ca-certificates wget<br>
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg<br>
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list<br>
+apt-get update<br>
+apt-get install -y php8.3<br>
+<br>
+You must install several PHP extensions in order to run Ignition
+<br>
+# Php and web server related
+apt-get install php8.3-xml php8.3-intl php8.3-curl php8.3-gmp<br>
+apt-get install php8.3-mysql libaprutil1-dbd-mysql php8.3-http php-memcache php-memcached php8.3-gd php8.3-fpm<br>
+apt-get install php8.3-mcrypt php-apcu php8.3-cli php-pear php8.3-mbstring # not available php-fdomdocument php-dompdf<br>
+
+# Install certbot in order to add SSL to your web server
+apt-get install python3-certbot<br>
+apt-get install python3-certbot-nginx<br>
