@@ -57,8 +57,8 @@ app.CSPEnabled = false
 
 # Williamson Software, Ignition main site
 database.ignitionbasic.hostname = 127.0.0.1
-database.ignitionbasic.database = ignitionbasic
-database.ignitionbasic.username = ignitionbasic
+database.ignitionbasic.database = ignitionbase
+database.ignitionbasic.username = ignitionbase
 database.ignitionbasic.password = secretcode123
 database.ignitionbasic.DBDriver = MySQLi
 database.ignitionbasic.socket = 127.0.0.1
@@ -66,7 +66,7 @@ database.ignitionbasic.socket = 127.0.0.1
 # Ignition, taz
 database.ignition_taz.hostname = 127.0.0.1
 database.ignition_taz.database = ignition_taz
-database.ignition_taz.username = ignitionbasic
+database.ignition_taz.username = ignitionbase
 database.ignition_taz.password = secretcode123
 database.ignition_taz.DBDriver = MySQLi
 database.ignition_taz.socket = 127.0.0.1
