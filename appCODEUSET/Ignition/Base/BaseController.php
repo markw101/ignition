@@ -57,11 +57,12 @@ class BaseController extends \CodeIgniter\Controller
         $this->IConfig = new \Site\SiteConfig;
 
         // ----- request session and set user access.  keycode == NOTLOGGEDIN boolean for user has no session
+        //       username means we have a logged in session set up 
 		if (USERNAME) {
 			// ----- autolang means determine language by url, otherwise user config 
 			if (!AUTOLANG) {
 				include APPPATH . "Ignition/Library/EarthicaLanguages.php";
-				$myLocale = (isset($systemLanguages[$sessionData['user_language']]) ? $sessionData['user_language'] : DEFAULTLOCALE);
+				$myLocale = (isset($systemLanguages[$_SESSION['session_data']['user_language']]) ? $_SESSION['session_data']['user_language'] : DEFAULTLOCALE);
 			}
 
 			// ----- SECURITY: set internal rbac list controllers with keycodes
