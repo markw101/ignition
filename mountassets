@@ -1,0 +1,2 @@
+echo "Customize this file based on where you installed your ignition web app"
+# sudo mount -r --bind /home/web/myignition.com/web/writeCODEUSET/uploadCODEUSET /home/web/myignition.com/web/public/assets

@@ -1,0 +1,1 @@
+../../Ignition/Lang/en/admin.php

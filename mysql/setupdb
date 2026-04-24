@@ -1,0 +1,3 @@
+sudo mariadb < mariadb
+sudo mariadb ignitionbase < ignitionbase.sql
+sudo mariadb ignition_taz < ignition_taz.sql

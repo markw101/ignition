@@ -1,0 +1,6 @@
+CREATE DATABASE ignitionbase;
+CREATE USER 'ignitionbase'@'localhost' IDENTIFIED BY 'secretcode123';
+GRANT ALL PRIVILEGES ON ignitionbase.* TO 'ignitionbase'@'localhost';
+
+CREATE DATABASE ignition_taz;
+GRANT ALL PRIVILEGES ON ignition_taz.* TO 'ignitionbase'@'localhost';
