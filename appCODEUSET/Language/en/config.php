@@ -1,5 +1,6 @@
 <?php
 return [
+    'account_type'          => 'Account',
 	'title'                 => "Welcome to Ignition Base",
 	'siteDescription'       => 'Ignition Base Module',
 	'authorTitle'           => 'Super Smart!',

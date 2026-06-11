@@ -674,16 +674,6 @@ if (! function_exists('EntityNumber'))
 
 }
 
-// ------ given a FAN, return ezone in database name format
-if (! function_exists('ExtractEzoneFAN'))
-{
-    function ExtractEzoneFAN($eFan) {
-
-        return strtoupper(substr($eFan, strpos($eFan, '@') + 1, 4)) . strtolower(substr($eFan, strpos($eFan, '.') + 1));
-    }
-
-}
-
 // ------ hash or verify a value using the QuickSum algo.  second param is either salt of set to false which means verify
 if (! function_exists('QuickSum'))
 {
@@ -724,7 +714,8 @@ if (! function_exists('CleanPrefix'))
 
 	function CleanPrefix($eAsset) {
 
-        if(($pos = strpos($eAsset, '-')) === FALSE)
+        $testVal = substr($eAsset, 0, 2);
+        if(($pos = strpos($eAsset, '-')) === FALSE || ($testVal == "M-" || $testVal == "B-" || $testVal == "K-" || $testVal == "T-"))
             return $eAsset;
         else
             return substr($eAsset, $pos + 1);
@@ -761,5 +752,16 @@ if (! function_exists('TrGetFlash'))
 	}
 
 }
+
+// ------ given a FAN, return ezone in database name format
+if (! function_exists('ExtractEzoneFAN'))
+{
+    function ExtractEzoneFAN($eFan) {
+
+        return strtoupper(substr($eFan, strpos($eFan, '@') + 1, 4)) . strtolower(substr($eFan, strpos($eFan, '.') + 1));
+    }
+
+}
+
 
 ?>

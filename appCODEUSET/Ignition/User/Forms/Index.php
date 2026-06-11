@@ -32,7 +32,7 @@ class Index extends Model
             'user_email' => lang('base.email'),
             'user_fname' => lang('base.first_name'),
             'user_lname' => lang('base.last_name'),
-            'user_peernum' => lang('base.epn'),
+            'user_peernum' => lang('base.en'),
             'user_accountnum' => lang('base.account') . '#',
             'active' => lang('base.active')
         ];

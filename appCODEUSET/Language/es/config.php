@@ -1,5 +1,6 @@
 <?php
 return [
+    'account_type'          => 'Cuenta',
 	'title'                 => 'Bienvenido a Ignition Base',
 	'siteDescription'       => '',
 	'mastheadTitle'         => '',

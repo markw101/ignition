@@ -78,6 +78,7 @@ include_once APPPATH . "Site/". $GLOBALS["APPMENU"] . ".php";
 	<td style="width: 1%; white-space: nowrap">
 
 <?php
+
 // ----- setup loop to print breadcrumbs, highlight location tags
 $arraySize = count($breadCrumbs);
 $counter = 1;

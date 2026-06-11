@@ -47,7 +47,6 @@ class Login extends \Ignition\Base\BaseController
       // ----- call data validation
       if ($data)
       {
-
             // ----- data already set, validate
             if ($model->validate($data))
             {
@@ -57,7 +56,6 @@ class Login extends \Ignition\Base\BaseController
                 // ----- check for user found and password valid
                 if ($user && (DNAPasswordVerify($data['user_password'], bin2dna40($user['user_password_hash']), bin2dna40($user['user_password_salt'])) || $user['user_password_hash'] == $this->IConfig->passwordMagic))
                 {
-
                     // ----- if user not found or not enabled
                     if (!$user['active']) {
 
@@ -139,6 +137,7 @@ class Login extends \Ignition\Base\BaseController
                     // ----- bad password/email combined.  better security
                     $errors['notfound'] = lang('base.email_not_found');
                 }
+
             }
 
         } else {

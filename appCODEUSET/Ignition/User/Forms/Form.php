@@ -32,7 +32,8 @@ class Form extends Model
         'user_password2',
         'user_password_hash',
 		'user_language',
-		'user_peernum'
+		'user_peernum',
+        'user_password_salt'
     ];
 
     protected $validationRules = [];

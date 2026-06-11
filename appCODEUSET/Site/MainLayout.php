@@ -49,8 +49,8 @@ $layout->content();
             <div class="mx-auto">
 				<p class="copyright text-muted">
                     <?= lang('base.ignitionpower') . " v" . $this->IgnitionVersion ?>
-                    <br>Williamson Software © <?= date("Y") ?>
-                    <br>On the Internet for 30 years
+                    <br><a href="https://williamsonsoftware.com"><u>Williamson Software</u></a> © <?= date("Y") ?>
+                    <br><em>On the Internet for 30 years</em>
                 </p>
             </div>
 		</div>

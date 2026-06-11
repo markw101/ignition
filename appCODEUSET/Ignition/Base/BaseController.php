@@ -10,6 +10,7 @@
                  1.4 Oct 2025, numerous refinements DNA launch upgrades
                  1.5 Dec 2025, DNA/Ignition security upgrades
                  1.6 Apr 2026, Upgrade CodeIgniter, CI4.5 -> CI4.7 
+                 1.7 Jun 2026, bug fixes, fixed salt new user (see github notes)
     DESCRIPTION: General website dev tool building atop CodeIgniter4
     COPYRIGHT:   2021, 2022, 2023, 2024, 2025, 2026
     FIRST REV:   December 2021
@@ -44,7 +45,7 @@ class BaseController extends \CodeIgniter\Controller
     public $customLanguage = FALSE;     // Changes default language, usually set dynamically in controller, used in autocrumble
     public $appLayoutFile = '';         // This sets the layout for admin
     public $mainLayoutFile = 'MainLayout.php';  // Set the default main layout.  copy this file and update for your layout
-    public $IgnitionVersion = "1.5.0";  // Version number for this release
+    public $IgnitionVersion = "1.6.0";  // Version number for this release
     protected $subModule = FALSE;       // for more complex modules with sub parts (used also autoform)
     protected $uri;
     protected $securityCode = FALSE;

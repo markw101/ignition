@@ -112,6 +112,7 @@ class Controller extends \Ignition\Base\BaseController
             if ($this->moduleMethod == 'new') {
 	            $model->data = $model->AllowedBlank();
 				$model->data['user_language'] = $GLOBALS['LANGCODE'];
+				$model->data['user_password_salt'] = bin2dna40(random_bytes(DNA_SALT_BYTES));
 
             } else {
 
@@ -239,7 +240,7 @@ halt(lang('base.feature_unavailable'));
 	        'url' => BaseURL('/user/sendverificationemail')]
          );
 
-        return $this->RenderTheme('verificationEmail', [
+        return $this->RenderTheme('verificationemail', [
             'model' => $model,
             'data' => $model->data,
             'breadCrumbs' => $breadCrumbs,
@@ -286,7 +287,7 @@ halt(lang('base.feature_unavailable'));
 	        'url' => BaseURL('/user/requestpasswordreset')]
          );
 
-        return $this->RenderTheme('requestPasswordReset', [
+        return $this->RenderTheme('RequestPasswordReset', [
             'model' => $model,
             'data' => $model->data,
             'breadCrumbs' => $breadCrumbs,

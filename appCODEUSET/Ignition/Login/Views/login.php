@@ -122,7 +122,7 @@ if (AUTOLANG) {
     echo '</ul></div>';
 
 }
-$form->model->fieldLabels['user_username'] = strtoupper(lang('base.email') . lang('base.or') . lang('base.account') . ' ' . lang('base.number'));
+$form->model->fieldLabels['user_username'] = strtoupper(lang('base.email') . lang('base.or') . lang('config.account_type') . ' ' . lang('base.number'));
 
 $form->IText('user_username', ['autofocus' => TRUE]);
 $form->IPassword('user_password');

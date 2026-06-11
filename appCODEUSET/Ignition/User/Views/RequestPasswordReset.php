@@ -117,8 +117,8 @@ $form->IFormClose();
 // --- display instructions
 echo '<br><br>';
 echo lang('config.no_account') . '&nbsp;<a href="' . $iConfig->signupURL . '">[' . lang('config.sign_up') . ']</a><br>';
-echo lang('base.if_forgot') . '&nbsp;<a href="/user/requestPasswordReset">[' . lang('base.password_reset') . ']</a><br>';
-echo lang('base.need_verification_email') . '&nbsp;<a href="/user/sendverificationemail">[' . lang('base.resend') . ']</a>.<br><br>';
+echo lang('base.if_forgot') . '&nbsp;<a href="/user/RequestPasswordReset">[' . lang('base.password_reset') . ']</a><br>';
+echo lang('base.need_verification_email') . '&nbsp;<a href="/user/VerificationEmail">[' . lang('base.resend') . ']</a>.<br><br>';
 */
 echo '</div>';
 

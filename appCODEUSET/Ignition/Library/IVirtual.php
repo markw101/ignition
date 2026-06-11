@@ -68,7 +68,7 @@ class IVirtual
 			case 'repeater' :
 				return $this->data[substr($labelKey, 0, strlen($labelKey) - 11)];
 
-            // ----- this can be used in the case that a field name has been used elsewhare and, for example, an external ref is required
+            // ----- this can be used in the case that a field name has been used elsewhere and, for example, an external ref is required
 			case 'set_blank' :
 
 				return '';

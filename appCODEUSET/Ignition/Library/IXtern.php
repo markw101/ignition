@@ -143,11 +143,11 @@ class IXtern
             // ----- for binary fields, transform to text
             if ($link1FieldType1 == 'binified') {
                 $esdl1 = UnbinifyAsset($externalSearchDataLink1);
-                $countryID = substr($esdl1, substr($esdl1, '.') + 1);
+                $countryID = substr($esdl1, strpos($esdl1, '.') + 1);
                 $eSector = substr($esdl1, strpos($esdl1, '@') + 1, 4);
                 if (!$externalSearchDataLink1 = ExtractFANHeight($esdl1))
                     halt("Improperly formated binified asset in field1: " . $link1Field1);
-    
+
             } else if ($link1FieldType1 == 'dna40') {
                 $externalSearchDataLink1 = bin2dna40($externalSearchDataLink1);
 
@@ -190,8 +190,13 @@ class IXtern
 	        $db = \Config\Database::connect();
         }
 
-        $builder = $db->table($link1Table2);
-        $resultsObj = $builder->getWhere([$link1Field2 => $externalSearchDataLink1])->getResult('array');
+        if ($link1FieldType1 == 'binified') {
+            $resultsObj = [];
+            $resultsObj[] = FetchWorldwideRecord($esdl1);
+        } else {
+            $builder = $db->table($link1Table2);
+            $resultsObj = $builder->getWhere([$link1Field2 => $externalSearchDataLink1])->getResult('array');
+        }
 
         // ----- if no result, return
         if (empty($resultsObj))
@@ -218,7 +223,7 @@ class IXtern
 	        $db1 = \Config\Database::connect($dnaDB1);
             $builder1 = $db1->table($table1);
 
-            $resultsObj = $builder1->getWhere(['dna_parent_height' => $parentHeight1])->getResult('array');
+           $resultsObj = $builder1->getWhere(['dna_parent_height' => $parentHeight1])->getResult('array');
 
         }
 

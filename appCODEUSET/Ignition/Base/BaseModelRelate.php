@@ -198,7 +198,6 @@ class BaseModelRelate extends BaseModel
         }
 
 		$childRecs = $this->GetChildrenReturn($filter);            // obtain all existing child records
-
         $this->totalChildren = count($childRecs);
 
 		$preFix = '_>' . $this->table2 . '<_';
@@ -613,8 +612,8 @@ class BaseModelRelate extends BaseModel
         if (!empty($filter) && array_key_exists('__id_range__', $filter)) {
     		$db      = SetDB($GLOBALS['DBGROUP']);
     		$builder = $db->table($this->table2);
-            return $builder->get($filter['limit'], $filter['offset'])->getResult('array');
-
+            $records = $builder->get($filter['limit'], $filter['offset'])->getResult('array');
+            return $records;
         }
 
 		// ----- check for unknown parent, otherwise limit scope to pid 
@@ -622,7 +621,6 @@ class BaseModelRelate extends BaseModel
 		//       but the parent id is unknown
 		if ($pid != '__UNKNOWNPARENT__' && $this->fieldNameChildRelated != 'ALL')
 			$filter = array_merge([$this->fieldNameChildRelated => $pid], $filter);
-
 		// ----- connect to secondary table 
 		$db      = SetDB($GLOBALS['DBGROUP']);
 		$builder = $db->table($this->table2);

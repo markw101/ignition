@@ -11,18 +11,17 @@
 *********************************************************************/
 
 // ----- create form object
-$form = new iForm();
+$form = new IForm();
 
 // ----- render any messages
 $form->iFormSuccess();
 
 // ----- create row and column
-$form->iColumn(lang('gravitron.accounts'), true);
-echo '<table width="50%"><tr><td>';
-echo '<center>';
-$form->iButton(lang('gravitron.account'), baseURL("/account" . $GLOBALS['KEYCODE']));
-echo '</center>';
-echo '</td></tr></table>';
+$form->iColumn(lang('base.mydashboard'), true);
+echo '<div class=buttonItems>';
+echo '<table width="80%"><tr><td>';
+echo '<tr><td></td></tr></table>';
 $form->iRowClose();
+echo '</div>';
 
 ?>

@@ -809,13 +809,21 @@ class IForm
     }
 
     // ----- output error messages
-    public function IFormMessage($message = '')
+    public function IFormMessage($message = '', $success = TRUE)
     {
-		if ($message != '')
-			echo '<div class="alert alert-success">' . $message . '</div>';
+        // ---- check for messages
+		if ($message == '')
+    		$this->IFormSuccess();
+        else {
+            // ----- check for lang request
+            if (is_int($message))
+                $message = lang('errors.' . $message);
 
-		$this->IFormSuccess();
-
+            if ($success)
+    			echo '<div class="alert alert-success">' . $message . '</div>';
+            else
+    			echo '<div class="alert alert-danger">' . $message . '</div>';
+        }
     }
 
     // ----- output messages

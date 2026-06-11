@@ -47,5 +47,5 @@ br(2);
 $form->IFormSubmit(lang('base.save'));
 $form->IFormClose();
 br();
-$form->IButton("Logout", BaseURL("/user" . $GLOBALS['KEYCODE'] . '/logout'));
+$form->IButton("Logout", BaseURL("/userlogout" . $GLOBALS['KEYCODE']));
 echo '</font><br><br></div>';

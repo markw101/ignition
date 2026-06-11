@@ -13,9 +13,9 @@
 
 // ----- match $needle in $haystack1 and return corresponding column element in $haystack2.  
 //       Use | delimeter to build lists
-if (! function_exists('ColMatch'))
+if (! function_exists('MatchUp'))
 {
-    function ColMatch($needle, $hayStack1, $hayStack2)
+    function MatchUp($needle, $hayStack1, $hayStack2)
     {
         // ----- init, remove leading separator
         $hayStack1 = (substr($hayStack1, 0, 1) == '|' ? substr($hayStack1, 1) : $hayStack1);
@@ -36,6 +36,9 @@ if (! function_exists('ExitFlashGuest'))
 {
     function ExitFlashGuest($exitMessage, $url = FALSE, $warnLevel = FALSE)
     {
+        // ----- check for lang request
+        if (is_int($exitMessage))
+            $exitMessage = lang('errors.' . $exitMessage);
 
         $redirectString  = json_encode(['title' => lang('base.program') . ' ' . ($warnLevel ? lang('base.warning') : lang('base.error')),
             'body' => $exitMessage,
@@ -56,6 +59,10 @@ if (! function_exists('ExitFlash'))
 {
     function ExitFlash($exitMessage, $url = FALSE, $warnLevel = FALSE)
     {
+
+        // ----- check for lang request
+        if (is_int($exitMessage))
+            $exitMessage = lang('errors.' . $exitMessage);
 
         SetFlash(['title' => lang('base.program') . ' ' . ($warnLevel ? lang('base.warning') : lang('base.error')),
             'body' => $exitMessage,
@@ -118,6 +125,8 @@ if (! function_exists('InList'))
 
 // ----- check and see if up to 7 values (needles) exists within a list of values (haystack), 
 //       no delimiter required.  does not work with boolean values and needle1 must not be blank
+//       warning: insecure against partial needle matches.  Use, instead, ValSetArray() when might
+//       be an accuracy issue
 //
 if (! function_exists('ValSet'))
 {
@@ -783,6 +792,24 @@ if (! function_exists('halt'))
 	}
 }
 
+// ----- universal function for debugging and error trapping
+if (! function_exists('haltShowError'))
+{
+    function haltShowError($debugMessage = '')
+    {
+
+        // ----- check for message is an error code
+        if (is_int($debugMessage))
+            $debugMessage = FetchError($debugMessage);
+
+		echo (gettype($debugMessage) == 'array' ? print_r($debugMessage) : $debugMessage . _br());
+        echo "Program halted";
+
+		die();
+
+	}
+}
+
 // ----- return error code text
 if (! function_exists('FetchError'))
 {
@@ -1273,7 +1300,10 @@ if (! function_exists('FetchMetaData'))
 // ----- fail safe set db group.  if does not exist, return false
 if (!function_exists('SetDB'))
 {
-    function SetDB($dbGroup) {
+    function SetDB($dbGroup = FALSE) {
+
+        // ----- open earthizen root database
+        $dbGroup = $dbGroup ? $dbGroup : DEFAULTDBGROUP;
 
         // ----- check exits
         $myDB = new \Config\Database;
@@ -1307,9 +1337,10 @@ if (! function_exists('DBExists'))
 }
 
 // ----- get user profile record.  Use id by default
+//       $localCall indicates that the function was not called using a remote procedure call (DM transfers and such)
 if (!function_exists('GetUserProfile'))
 {
-    function GetUserProfile($uid, $byEN = FALSE) {
+    function GetUserProfile($uid, $byEN = FALSE, $localCall = TRUE) {
 
         if (!$db = SetDB(DEFAULTDBGROUP)) {
             SetFlash("Failed to connect to default database");
@@ -1317,8 +1348,11 @@ if (!function_exists('GetUserProfile'))
         }
         $builder = $db->table('user');
 
-        if ($byEN) {
-            if ($_SESSION['session_data']['user_peernum'] == 'ANONYMOUS' || substr($uid, 0, 1) == 'W')
+        // ----- check for anon keypost value
+        if ($byEN && substr($uid, 0, 1) == 'A') {
+    	   $resultsObj = $builder->getWhere(['user_priv_id' => BinifyAsset($uid)])->getResult('array');
+        } elseif ($byEN) {
+            if (($localCall && $_SESSION['session_data']['user_peernum'] == 'ANONYMOUS') || substr($uid, 0, 1) == 'W')
     		  $resultsObj = $builder->getWhere(['user_accountnum' => dna402bin($uid)])->getResult('array');
             else 
     		  $resultsObj = $builder->getWhere(['user_peernum' => dna402bin($uid)])->getResult('array');
@@ -1512,4 +1546,18 @@ if (! function_exists('NumberFormat'))
    }
 }
 
+// ----- set message to appear in next form render
+/// NOT BEING USED DELET JUNE 1 2026
+if (! function_exists('SetFlashMessage'))
+{
+    function SetIFormMessage($message, $name = 'success') {
+
+        // ----- check for lang request
+        if (is_int($message))
+            $message = lang('errors.' . $message);
+
+        $_SESSION['session_data']['user_flash'] = $message;
+
+    }
+}
 ?>

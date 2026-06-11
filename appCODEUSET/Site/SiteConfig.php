@@ -240,6 +240,13 @@ class SiteConfig extends \Config\App
 				'allowUserEdit' => "|10|",
 				'allowVisitor' => "NONE",
 				'limitedToID' => TRUE
+			],
+			'controlpanel' . $GLOBALS['KEYCODE'] => [
+				'baseEnforce' => TRUE,
+				'allowUser' => "|10|",
+				'allowUserEdit' => '|10|',
+				'allowVisitor' => "NONE",
+				'limitedToID' => FALSE
 			]
             ]);
 	}

@@ -70,8 +70,8 @@
 	$GLOBALS['DBGROUP'] = 'ignitionbase';      // current db table group, DYNAMIC
 	define("USERVIEWPATH", 'Ignition\User\Views');    // user views location.  default: Ignition\User\Views
 	define("USERFORMSPATH", 'Ignition\User\Forms');   // user forms location  default: Ignition\User\Forms
-	define("APPHOME", "");	                   // application home screen, breadcrumbs
-	define("CUSTOMLANG", 'ignition');
+	define("APPHOME", "controlpanel");                // application home screen, breadcrumbs
+	define("CUSTOMLANG", 'ignition');          // name of primary language file customized for this site.  Use a short version of the name of this site.  Used in breadcrumbs
     define("SPARKS", FALSE);                   // include sparks in blog
     define("SUCCESS", TRUE);                   // what we are playing for!
     define('AUTOTRIM0', TRUE);                 // iform, autotrim zeros from demimal value
